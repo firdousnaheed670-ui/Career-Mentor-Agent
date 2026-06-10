@@ -13,7 +13,7 @@ def extract_text_from_pdf(file_path):
 
 # Test the function with your uploaded resume
 if __name__ == "__main__":
-    resume_text = extract_text_from_pdf("samples/Data_Analyst_resume_updated.pdf")
+    resume_text = extract_text_from_pdf("Sample Resumes/Data_Analyst_resume_updated.pdf")
     print("Extracted Resume Text:\n")
     print(resume_text)
 
