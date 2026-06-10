@@ -1,6 +1,3 @@
-# Career Mentor Agent starting point
-
-# Function to extract text from a resume PDF
 # Career Mentor Agent - Step 2: Resume Text Extraction
 
 import PyPDF2
@@ -14,9 +11,9 @@ def extract_text_from_pdf(file_path):
             text += page.extract_text()
     return text
 
-# Test the function with your single sample resume
+# Test the function with your uploaded resume
 if __name__ == "__main__":
-    resume_text = extract_text_from_pdf("samples/resume.pdf")
+    resume_text = extract_text_from_pdf("samples/Data_Analyst_resume_updated.pdf")
     print("Extracted Resume Text:\n")
     print(resume_text)
 
