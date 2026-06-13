@@ -82,41 +82,22 @@ Pinpointed missing skills aligned with JD requirements.
 Actionable career advice for improvement.
 
 ---
-🔮 Future Work
 
-##🔗 Integration with Microsoft 365 Copilot
 
-While the Career Mentor Agent currently runs as a standalone Streamlit application, it is designed with enterprise integration in mind. Below are potential ways it could connect with Microsoft 365 Copilot:
+## 🔮 Future Scope
 
-##📄 Word Integration
+- **Microsoft 365 Copilot Integration**:  
+  While the Career Mentor Agent currently runs as a standalone Streamlit app, future work could involve integrating it with Microsoft 365 Copilot.  
+  - 📄 Word → Inline resume analysis and improvement suggestions.  
+  - 📧 Outlook → Candidate fit scoring for resumes attached to emails.  
+  - 💬 Teams → Career mentor chatbot for collaborative guidance.  
 
-Users drafting resumes in Microsoft Word could invoke the Career Mentor Agent directly within Copilot.
+- **Advanced AI Models**: Incorporating LLMs for deeper reasoning and personalized career pathways.  
+- **Enterprise Deployment**: Packaging as a plugin for HR systems and Microsoft Teams.  
+- **Analytics Dashboard**: Visual insights for recruiters and job seekers.
 
-The agent would analyze the resume content, highlight skill gaps, and suggest improvements inline.
 
-Example: “Add more measurable achievements to your experience section.”
 
-##📧 Outlook Integration
-
-Job seekers or HR professionals could use the agent in Outlook to evaluate resumes attached to emails.
-
-Copilot could surface insights from the Career Mentor Agent, such as candidate fit scores or missing skills.
-
-Example: “This candidate matches 80% of the job description requirements.”
-
-💬 Teams Integration
-Within Microsoft Teams, the agent could act as a career mentor chatbot.
-
-Users could ask questions like “What skills should I learn for a Data Scientist role?” and receive tailored guidance.
-
-This supports collaborative career planning in enterprise environments.
-
-🎯 Value for Enterprises
-Enhances productivity by embedding career insights directly into Microsoft 365 workflows.
-
-Helps HR teams streamline candidate evaluation.
-
-Empowers employees with personalized career development advice without leaving their daily tools.
 ---
 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
