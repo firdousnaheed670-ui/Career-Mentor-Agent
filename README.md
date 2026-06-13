@@ -83,18 +83,21 @@ Actionable career advice for improvement.
 
 ---
 🔮 Future Work
-🔗 Integration with Microsoft 365 Copilot
+
+##🔗 Integration with Microsoft 365 Copilot
 
 While the Career Mentor Agent currently runs as a standalone Streamlit application, it is designed with enterprise integration in mind. Below are potential ways it could connect with Microsoft 365 Copilot:
 
-📄 Word Integration
+##📄 Word Integration
+
 Users drafting resumes in Microsoft Word could invoke the Career Mentor Agent directly within Copilot.
 
 The agent would analyze the resume content, highlight skill gaps, and suggest improvements inline.
 
 Example: “Add more measurable achievements to your experience section.”
 
-📧 Outlook Integration
+##📧 Outlook Integration
+
 Job seekers or HR professionals could use the agent in Outlook to evaluate resumes attached to emails.
 
 Copilot could surface insights from the Career Mentor Agent, such as candidate fit scores or missing skills.
