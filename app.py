@@ -1,6 +1,20 @@
 import streamlit as st
 from PyPDF2 import PdfReader
-import re
+
+# Curated skills for Data Analyst & Data Scientist roles
+DATA_ANALYST_SKILLS = [
+    "Python", "SQL", "Excel", "Power BI", "Tableau", "R", "Statistics",
+    "Data Cleaning", "EDA", "Data Visualization", "Business Intelligence",
+    "Reporting", "Dashboards"
+]
+
+DATA_SCIENTIST_SKILLS = [
+    "Python", "R", "SQL", "Machine Learning", "Deep Learning", "TensorFlow",
+    "PyTorch", "Scikit-learn", "Statistics", "Data Mining", "Feature Engineering",
+    "Model Deployment", "Big Data", "Hadoop", "Spark", "AWS", "Azure", "GCP"
+]
+
+ALL_SKILLS = list(set(DATA_ANALYST_SKILLS + DATA_SCIENTIST_SKILLS))
 
 # Function to extract text from PDF
 def extract_text_from_pdf(file):
@@ -10,12 +24,26 @@ def extract_text_from_pdf(file):
         text += page.extract_text()
     return text
 
-# Function to extract keywords from JD
+# Function to extract skills from JD text
 def extract_keywords_from_jd(jd_text):
-    potential_keywords = re.findall(r'\b[A-Z][a-zA-Z0-9\+\#]*\b', jd_text)
-    stopwords = {"The", "And", "With", "For", "In", "On", "Of"}
-    keywords = [word for word in potential_keywords if word not in stopwords]
-    return list(set(keywords))
+    jd_keywords = [skill for skill in ALL_SKILLS if skill.lower() in jd_text.lower()]
+    return jd_keywords
+
+# Function to generate career advice
+def generate_career_advice(missing_skills):
+    advice = []
+    for skill in missing_skills:
+        if skill == "AWS":
+            advice.append("Add cloud experience (AWS/Azure/GCP) to strengthen data pipeline skills.")
+        elif skill == "TensorFlow":
+            advice.append("Highlight ML projects using TensorFlow or PyTorch to show deep learning expertise.")
+        elif skill == "Tableau":
+            advice.append("Add Tableau dashboards to complement Power BI for visualization variety.")
+        elif skill == "Statistics":
+            advice.append("Showcase statistical analysis projects to demonstrate strong analytical foundation.")
+        else:
+            advice.append(f"Consider gaining experience with {skill} and including it in your resume.")
+    return advice
 
 # Streamlit UI
 st.title("🧑‍💼 Career Mentor Agent")
@@ -39,12 +67,7 @@ if resume_file and jd_file:
     st.write(missing)
 
     st.subheader("💡 Career Advice")
-    for skill in missing:
-        if skill.lower() == "aws":
-            st.write("- Add cloud experience (AWS/Azure/GCP).")
-        elif skill.lower() == "tensorflow":
-            st.write("- Highlight ML projects using TensorFlow or PyTorch.")
-        elif skill.lower() == "tableau":
-            st.write("- Add Tableau dashboards to complement Power BI.")
-        else:
-            st.write(f"- Consider gaining experience with {skill}.")
+    advice = generate_career_advice(missing)
+    for tip in advice:
+        st.write("-", tip)
+
