@@ -82,6 +82,17 @@ def generate_career_advice(missing_skills):
     print("\n💡 Career Advice:")
     for tip in advice:
         print("-", tip)
+
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
+def extract_keywords_from_jd(jd_text):
+    doc = nlp(jd_text)
+    keywords = [token.text for token in doc if token.pos_ in ["PROPN", "NOUN"]]
+    # Filter obvious junk
+    stopwords = {"Job", "Description", "Responsibilities", "Required", "What", "You"}
+    return [kw for kw in keywords if kw not in stopwords]
+
     
 
    
