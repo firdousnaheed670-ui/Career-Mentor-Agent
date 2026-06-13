@@ -10,6 +10,7 @@ This project helps bridge that gap by automatically comparing resumes with JDs a
 
 ---
 ## 🚀 Live Demo
+Try the app here: [Open Live Demo](https://career-mentor-agent-ngbfajqlm9dwigsgsp3ajm.streamlit.app/) 
 ---
 ## 📊 Datasets / Inputs
 - **Resume PDF**: Candidate’s resume file.  
