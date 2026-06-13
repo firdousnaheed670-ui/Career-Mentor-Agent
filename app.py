@@ -47,6 +47,16 @@ def generate_career_advice(missing_skills):
 
 # Streamlit UI
 st.title("🧑‍💼 Career Mentor Agent")
+# Streamlit UI
+role = st.selectbox("Select Role", ["Data Analyst", "Data Scientist"])
+
+if role == "Data Analyst":
+    st.title("📊 Career Mentor Agent – Data Analyst Role")
+    skills_list = DATA_ANALYST_SKILLS
+else:
+    st.title("🧪 Career Mentor Agent – Data Scientist Role")
+    skills_list = DATA_SCIENTIST_SKILLS
+
 st.write("Upload your Resume and Job Description PDFs to compare skills.")
 
 resume_file = st.file_uploader("Upload Resume PDF", type="pdf")
@@ -56,7 +66,7 @@ if resume_file and jd_file:
     resume_text = extract_text_from_pdf(resume_file)
     jd_text = extract_text_from_pdf(jd_file)
 
-    jd_keywords = extract_keywords_from_jd(jd_text)
+    jd_keywords = [skill for skill in skills_list if skill.lower() in jd_text.lower()]
     found = [kw for kw in jd_keywords if kw.lower() in resume_text.lower()]
     missing = [kw for kw in jd_keywords if kw.lower() not in resume_text.lower()]
 
@@ -70,4 +80,6 @@ if resume_file and jd_file:
     advice = generate_career_advice(missing)
     for tip in advice:
         st.write("-", tip)
+
+
 
